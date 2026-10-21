@@ -1,0 +1,435 @@
+<!doctype html>
+<!-- =============================================================================
+     index.html — ГЛАВНАЯ СТРАНИЦА кафе «Розмарин»
+     Секции: прелоадер → hero → преимущества → атмосфера (закреплённая) →
+     фирменные блюда (горизонтальный скролл) → мангал → завтраки → напитки →
+     отзывы → бронирование → банкеты → как нас найти.
+     Шапка, футер, корзина и cookie-баннер дорисовываются из assets/js/core.js.
+     Тексты секций можно править прямо здесь; контакты/часы — в assets/js/config.js.
+     ============================================================================= -->
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Кафе «Розмарин» в Избербаше — мангал, завтраки, веранда, доставка</title>
+  <meta name="description" content="Уютное халяль-кафе в Избербаше: мангал, европейская, восточная и японская кухня, авторские лимонады и молочные коктейли, завтраки 09:00–12:00, летняя веранда, банкеты и доставка. Рейтинг 5.0 на Яндекс Картах.">
+  <meta name="theme-color" content="#15302A">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <!-- Open Graph: превью ссылки в мессенджерах и соцсетях -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:title" content="Кафе «Розмарин» — Избербаш">
+  <meta property="og:description" content="Мангал, авторские напитки и завтраки на веранде. 5.0 на Яндекс Картах · «Хорошее место 2026».">
+  <meta property="og:image" content="https://avatars.mds.yandex.net/get-altay/10845257/2a00000189f95572c9d43d8c025920a48c59/XXXL">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://avatars.mds.yandex.net">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Разметка schema.org Restaurant для поисковиков -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Кафе «Розмарин»",
+    "alternateName": "Rosemarin",
+    "image": "https://avatars.mds.yandex.net/get-altay/10845257/2a00000189f95572c9d43d8c025920a48c59/XXXL",
+    "telephone": "+79618347000",
+    "address": { "@type": "PostalAddress", "streetAddress": "ул. Гамидова, 22А", "addressLocality": "Избербаш", "addressRegion": "Республика Дагестан", "addressCountry": "RU" },
+    "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "09:00", "closes": "23:00" }],
+    "servesCuisine": ["Европейская", "Восточная", "Японская", "Мангал", "Пицца", "Паста"],
+    "priceRange": "₽₽",
+    "acceptsReservations": true,
+    "hasMenu": "menu.html",
+    "sameAs": ["https://vk.ru/public211512350"],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "ratingCount": "1564", "bestRating": "5" }
+  }
+  </script>
+</head>
+<body data-page="home">
+
+  <!-- Прелоадер (≤1.2с): веточка рисуется штрихом, появляется логотип и уезжает в шапку -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="pl-inner">
+      <svg class="branch" viewBox="0 -6 240 64" aria-hidden="true"><path class="stem" pathLength="1" d="M6 44 C 70 40, 140 30, 234 20"/><path class="leaf" pathLength="1" style="--i:0" transform="translate(21.5 42.9) rotate(-50.9)" d="M0 0 C 5.3 -3.4, 14.9 -3.2, 21.3 0 C 14.9 2.6, 5.3 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:1" transform="translate(33.0 42.0) rotate(40.7)" d="M0 0 C 5.2 -3.4, 14.5 -3.2, 20.8 0 C 14.5 2.6, 5.2 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:2" transform="translate(44.7 41.0) rotate(-49.7)" d="M0 0 C 5.1 -3.4, 14.2 -3.2, 20.2 0 C 14.2 2.6, 5.1 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:3" transform="translate(56.6 39.8) rotate(37.8)" d="M0 0 C 4.9 -3.4, 13.8 -3.2, 19.7 0 C 13.8 2.6, 4.9 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:4" transform="translate(68.8 38.6) rotate(-48.3)" d="M0 0 C 4.8 -3.4, 13.4 -3.2, 19.2 0 C 13.4 2.6, 4.8 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:5" transform="translate(81.1 37.3) rotate(35.1)" d="M0 0 C 4.7 -3.4, 13.0 -3.2, 18.6 0 C 13.0 2.6, 4.7 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:6" transform="translate(93.8 35.9) rotate(-46.6)" d="M0 0 C 4.5 -3.4, 12.7 -3.2, 18.1 0 C 12.7 2.6, 4.5 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:7" transform="translate(106.7 34.5) rotate(32.7)" d="M0 0 C 4.4 -3.4, 12.3 -3.2, 17.6 0 C 12.3 2.6, 4.4 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:8" transform="translate(119.9 33.0) rotate(-44.7)" d="M0 0 C 4.3 -3.4, 11.9 -3.2, 17.1 0 C 11.9 2.6, 4.3 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:9" transform="translate(133.4 31.4) rotate(30.4)" d="M0 0 C 4.1 -3.4, 11.6 -3.2, 16.5 0 C 11.6 2.6, 4.1 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:10" transform="translate(147.3 29.8) rotate(-42.7)" d="M0 0 C 4.0 -3.4, 11.2 -3.2, 16.0 0 C 11.2 2.6, 4.0 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:11" transform="translate(161.6 28.1) rotate(28.3)" d="M0 0 C 3.9 -3.4, 10.8 -3.2, 15.5 0 C 10.8 2.6, 3.9 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:12" transform="translate(176.3 26.4) rotate(-40.4)" d="M0 0 C 3.7 -3.4, 10.5 -3.2, 14.9 0 C 10.5 2.6, 3.7 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:13" transform="translate(191.3 24.7) rotate(26.4)" d="M0 0 C 3.6 -3.4, 10.1 -3.2, 14.4 0 C 10.1 2.6, 3.6 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:14" transform="translate(206.9 23.0) rotate(-38.1)" d="M0 0 C 3.5 -3.4, 9.7 -3.2, 13.9 0 C 9.7 2.6, 3.5 2.6, 0 0 Z"/><path class="leaf" pathLength="1" style="--i:15" transform="translate(222.8 21.2) rotate(24.5)" d="M0 0 C 3.3 -3.4, 9.4 -3.2, 13.4 0 C 9.4 2.6, 3.3 2.6, 0 0 Z"/></svg>
+      <img class="pl-logo" src="assets/img/logo.svg" alt="" width="220" height="86">
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-media">
+        <img data-img="hero" src="https://avatars.mds.yandex.net/get-altay/10845257/2a00000189f95572c9d43d8c025920a48c59/XXXL" alt="Зал кафе «Розмарин»: живая зелень и плетёные лампы" fetchpriority="high" decoding="async">
+      </div>
+      <canvas class="hero-embers" data-embers aria-hidden="true"></canvas>
+      <div class="wrap hero-content">
+        <span class="badge"><span class="star">★</span> 5.0 · Хорошее место 2026 · Яндекс</span>
+        <h1 id="hero-title" data-split>Уютное кафе <em>с&nbsp;душой</em></h1>
+        <p class="lead" data-hero-fade>Мангал, авторские напитки и завтраки на веранде в Избербаше. Европейская, восточная и японская кухня — всё халяль.</p>
+        <div class="hero-ctas" data-hero-fade>
+          <a class="btn btn-primary" href="menu.html">Заказать доставку <i data-ic="arrow"></i></a>
+          <a class="btn btn-glass" href="#booking">Забронировать стол</a>
+        </div>
+        <div class="hero-meta" data-hero-fade>
+          <span><i data-ic="pin"></i><span data-cfg="addressShort"></span></span>
+          <span><i data-ic="clock"></i>Зал с 09:00</span>
+          <span><i data-ic="truck"></i>Доставка 10:00–22:00</span>
+        </div>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">Листайте</div>
+    </section>
+
+    <!-- ============ ПРЕИМУЩЕСТВА ============ -->
+    <section class="perks" aria-label="Особенности кафе">
+      <div class="wrap">
+        <ul>
+          <li data-reveal="0"><span class="perk-ic halal" aria-hidden="true">حلال</span><span>Халяль<small>вся кухня</small></span></li>
+          <li data-reveal="1"><span class="perk-ic"><i data-ic="sun"></i></span><span>Летняя веранда<small>беседки и навес</small></span></li>
+          <li data-reveal="2"><span class="perk-ic"><i data-ic="kids"></i></span><span>Детский уголок<small>спокойно с семьёй</small></span></li>
+          <li data-reveal="3"><span class="perk-ic"><i data-ic="truck"></i></span><span>Доставка<small>и самовывоз</small></span></li>
+          <li data-reveal="4"><span class="perk-ic"><i data-ic="moon"></i></span><span>Молельная<small>комната</small></span></li>
+          <li data-reveal="5"><span class="perk-ic"><i data-ic="wifi"></i></span><span>Wi-Fi, парковка<small>кофе с собой</small></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ АТМОСФЕРА: закреплённая секция, 3 кадра сменяются при скролле ============ -->
+    <section class="atmo" id="atmosphere" aria-labelledby="atmo-title">
+      <h2 id="atmo-title" class="visually-hidden">Атмосфера кафе</h2>
+      <div class="atmo-track" data-atmo>
+        <div class="atmo-sticky">
+          <div class="wrap atmo-grid">
+            <div>
+              <span class="eyebrow">Атмосфера · 97% положительных упоминаний в отзывах</span>
+              <div class="atmo-texts">
+                <article class="atmo-text is-active">
+                  <h3>Мягкие диваны <em>и лаунж</em></h3>
+                  <p class="lead">Бархатные диваны, уютные кабинки и негромкая музыка. Зелень под потолком и плетёные лампы — сюда приходят на долгие разговоры.</p>
+                  <div class="atmo-count"><b>01</b> / 03</div>
+                </article>
+                <article class="atmo-text">
+                  <h3>Летняя <em>веранда</em></h3>
+                  <p class="lead">Столики под навесом, беседки, цветы и зелень. Утром — завтраки на свежем воздухе, вечером — ужин под гирляндами.</p>
+                  <div class="atmo-count"><b>02</b> / 03</div>
+                </article>
+                <article class="atmo-text">
+                  <h3>Детский <em>уголок</em></h3>
+                  <p class="lead">Пока взрослые пьют манговый чай, детям есть где поиграть. С семьёй здесь спокойно, а на веранде детям есть где побегать.</p>
+                  <div class="atmo-count"><b>03</b> / 03</div>
+                </article>
+              </div>
+              <div class="atmo-progress" aria-hidden="true"><i></i><i></i><i></i></div>
+            </div>
+            <div class="atmo-frames">
+              <figure class="atmo-frame is-active" style="margin:0"><div class="ph" style="height:100%;border-radius:0"><img data-img="lounge" alt="Мягкие диваны в зале кафе" loading="lazy"></div><figcaption class="frame-tag">Зал · диваны и кабинки</figcaption></figure>
+              <figure class="atmo-frame" style="margin:0"><div class="ph" style="height:100%;border-radius:0"><img data-img="veranda" alt="Летняя веранда кафе «Розмарин»" loading="lazy"></div><figcaption class="frame-tag">Летняя веранда</figcaption></figure>
+              <figure class="atmo-frame" style="margin:0">
+                <!-- Своего фото детского уголка пока нет — фирменная иллюстрация. Замените на фото заказчика. -->
+                <div class="kids-illu" role="img" aria-label="Иллюстрация: детский уголок">
+                  <svg viewBox="0 0 300 220" aria-hidden="true">
+                    <ellipse cx="150" cy="200" rx="130" ry="12" fill="#15302A" opacity=".12"/>
+                    <path d="M40 196 V96 h34 v100" fill="none" stroke="#2B8A8C" stroke-width="7" stroke-linecap="round"/>
+                    <path d="M74 100 C 120 110, 140 160, 196 192" fill="none" stroke="#D7346F" stroke-width="12" stroke-linecap="round"/>
+                    <path d="M44 120 h26 M44 140 h26 M44 160 h26 M44 180 h26" stroke="#2B8A8C" stroke-width="5" stroke-linecap="round"/>
+                    <rect x="196" y="160" width="34" height="34" rx="7" fill="#E8A15A"/>
+                    <rect x="234" y="160" width="34" height="34" rx="7" fill="#4E6B52"/>
+                    <rect x="215" y="124" width="34" height="34" rx="7" fill="#D7346F"/>
+                    <text x="232" y="148" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#fff">Р</text>
+                    <text x="213" y="184" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#fff">О</text>
+                    <text x="251" y="184" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="#fff">З</text>
+                    <path d="M120 60 C 118 80, 132 90, 128 120" fill="none" stroke="#15302A" stroke-width="1.5"/>
+                    <circle cx="120" cy="44" r="18" fill="#D7346F"/>
+                    <path d="M152 52 C 150 76, 160 92, 150 122" fill="none" stroke="#15302A" stroke-width="1.5"/>
+                    <circle cx="154" cy="36" r="16" fill="#2B8A8C"/>
+                    <path d="M180 64 C 176 82, 186 96, 172 124" fill="none" stroke="#15302A" stroke-width="1.5"/>
+                    <circle cx="184" cy="50" r="14" fill="#E8A15A"/>
+                  </svg>
+                </div>
+                <figcaption class="frame-tag">Детский уголок</figcaption>
+              </figure>
+            </div>
+          </div>
+          <!-- Мобильная версия: кадры идут друг за другом -->
+          <div class="wrap atmo-mobile">
+            <span class="eyebrow">Атмосфера</span>
+            <article><div class="ph"><img data-img="lounge" alt="Мягкие диваны в зале кафе" loading="lazy"></div><h3>Мягкие диваны <em>и лаунж</em></h3><p class="lead">Бархатные диваны, уютные кабинки и негромкая музыка.</p></article>
+            <article><div class="ph"><img data-img="veranda" alt="Летняя веранда" loading="lazy"></div><h3>Летняя <em>веранда</em></h3><p class="lead">Столики под навесом, беседки, цветы и зелень.</p></article>
+            <article><div class="ph" style="aspect-ratio:4/3"><div class="kids-illu" style="position:absolute;inset:0"><svg viewBox="0 0 300 220" aria-hidden="true"><path d="M74 100 C 120 110, 140 160, 196 192" fill="none" stroke="#D7346F" stroke-width="12" stroke-linecap="round"/><path d="M40 196 V96 h34 v100" fill="none" stroke="#2B8A8C" stroke-width="7" stroke-linecap="round"/><rect x="215" y="150" width="40" height="40" rx="8" fill="#E8A15A"/><circle cx="130" cy="50" r="18" fill="#D7346F"/><circle cx="165" cy="40" r="15" fill="#2B8A8C"/></svg></div></div><h3>Детский <em>уголок</em></h3><p class="lead">Детям есть где поиграть — с семьёй здесь спокойно.</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ФИРМЕННЫЕ БЛЮДА: горизонтальный скролл ============ -->
+    <section class="signature" id="signature" aria-labelledby="sig-title">
+      <div class="sig-track" data-sig>
+        <div class="sig-sticky">
+          <div class="wrap sig-head">
+            <div class="section-head" style="margin:0">
+              <span class="eyebrow">Фирменные блюда</span>
+              <h2 id="sig-title">То, за чем <em>возвращаются</em></h2>
+            </div>
+            <p class="lead" style="margin:0;max-width:38ch">Красивая подача — 100% положительных упоминаний в отзывах. Нажмите «+», чтобы добавить в заказ.</p>
+          </div>
+          <div class="sig-row" data-sig-row>
+            <article class="dish-card" data-tilt>
+              <span class="tag-hit">Хит</span>
+              <div class="ph"><img src="https://www.edostav.ru//upload/thumb/mr/988x494/goods_392243_6957da81b4fc3.jpeg" alt="Розмарин с бейби картофелем" loading="lazy"></div>
+              <div class="dc-body"><div><h3>Розмарин с&nbsp;бейби картофелем</h3><span class="price">950 ₽</span></div><button class="plus-btn" type="button" data-add-name="Розмарин с бейби картофелем" aria-label="Добавить в корзину: Розмарин с бейби картофелем"><i data-ic="plus"></i></button></div>
+            </article>
+            <article class="dish-card" data-tilt>
+              <div class="ph"><img src="https://www.edostav.ru//upload/thumb/mr/988x494/goods_392244_6957dae7625f4.jpeg" alt="Лосось на гриле" loading="lazy"></div>
+              <div class="dc-body"><div><h3>Лосось на&nbsp;гриле</h3><span class="price">1 050 ₽</span></div><button class="plus-btn" type="button" data-add-name="Лосось на гриле" aria-label="Добавить в корзину: Лосось на гриле"><i data-ic="plus"></i></button></div>
+            </article>
+            <article class="dish-card" data-tilt>
+              <div class="ph"><img src="https://www.edostav.ru//upload/thumb/mr/988x494/goods_1114659_6a7d66c491be5.jpeg" alt="Стейк Томагавк" loading="lazy"></div>
+              <div class="dc-body"><div><h3>Стейк Томагавк</h3><span class="price">1 500 ₽</span></div><button class="plus-btn" type="button" data-add-name="Стейк Томагавк" aria-label="Добавить в корзину: Стейк Томагавк"><i data-ic="plus"></i></button></div>
+            </article>
+            <article class="dish-card" data-tilt>
+              <div class="ph"><img src="https://www.edostav.ru//upload/thumb/mr/988x494/goods_973139_6957da1349ede.jpeg" alt="Птитим с ягнёнком" loading="lazy"></div>
+              <div class="dc-body"><div><h3>Птитим с&nbsp;ягнёнком</h3><span class="price">650 ₽</span></div><button class="plus-btn" type="button" data-add-name="Птитим с ягнёнком" aria-label="Добавить в корзину: Птитим с ягнёнком"><i data-ic="plus"></i></button></div>
+            </article>
+            <article class="dish-card" data-tilt>
+              <div class="ph"><img src="https://www.edostav.ru//upload/thumb/mr/988x494/goods_421025_8R7k1Bejy1.jpg" alt="Чизкейк Сан-Себастьян" loading="lazy"></div>
+              <div class="dc-body"><div><h3>Сан-Себастьян</h3><span class="price">400 ₽</span></div><button class="plus-btn" type="button" data-add-name="Сан-Себастьян" aria-label="Добавить в корзину: Сан-Себастьян"><i data-ic="plus"></i></button></div>
+            </article>
+            <div class="sig-end">
+              <p>Всё меню — от мангала и пасты до&nbsp;роллов и&nbsp;моти</p>
+              <a class="btn btn-dark" href="menu.html">Открыть меню <i data-ic="arrow"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ МАНГАЛ: тёмная секция с тлеющим свечением ============ -->
+    <section class="section grill" id="grill" aria-labelledby="grill-title">
+      <div class="ember-glow" aria-hidden="true"><i></i><i></i><i></i></div>
+      <canvas class="grill-canvas" data-embers="grill" aria-hidden="true"></canvas>
+      <div class="wrap grill-grid">
+        <div>
+          <div class="section-head" style="margin-bottom:0">
+            <span class="eyebrow" data-reveal>Мангал</span>
+            <h2 id="grill-title" data-reveal="1">Огонь, дым <em>и&nbsp;мясо</em></h2>
+            <p class="lead" data-reveal="2">Стейки Тибон и Томагавк, шашлык из мякоти баранины, «Пистолеты», люля и рыба на углях. Овощи и грибы — тоже с мангала.</p>
+          </div>
+          <ul class="grill-list">
+            <li data-reveal><span>Шашлык «Пистолеты»</span><span class="dots"></span><span class="p">1 100 ₽</span><button class="plus-btn" type="button" data-add-name="Шашлык «Пистолеты»" aria-label="В корзину: Шашлык «Пистолеты»"><i data-ic="plus"></i></button></li>
+            <li data-reveal="1"><span>Шашлык из мякоти баранины</span><span class="dots"></span><span class="p">1 000 ₽</span><button class="plus-btn" type="button" data-add-name="Шашлык из мякоти баранины" aria-label="В корзину: Шашлык из мякоти баранины"><i data-ic="plus"></i></button></li>
+            <li data-reveal="2"><span>Стейк Тибон</span><span class="dots"></span><span class="p">1 500 ₽</span><button class="plus-btn" type="button" data-add-name="Стейк Тибон" aria-label="В корзину: Стейк Тибон"><i data-ic="plus"></i></button></li>
+            <li data-reveal="3"><span>Стейк из сёмги</span><span class="dots"></span><span class="p">1 200 ₽</span><button class="plus-btn" type="button" data-add-name="Стейк из сёмги" aria-label="В корзину: Стейк из сёмги"><i data-ic="plus"></i></button></li>
+            <li data-reveal="4"><span>Люля говяжьи</span><span class="dots"></span><span class="p">400 ₽</span><button class="plus-btn" type="button" data-add-name="Люля говяжьи" aria-label="В корзину: Люля говяжьи"><i data-ic="plus"></i></button></li>
+            <li data-reveal="5"><span>Шашлык из курицы</span><span class="dots"></span><span class="p">480 ₽</span><button class="plus-btn" type="button" data-add-name="Шашлык из курицы" aria-label="В корзину: Шашлык из курицы"><i data-ic="plus"></i></button></li>
+          </ul>
+          <div class="set-card" data-reveal>
+            <div><span class="eyebrow">Для компании</span><h3>Сет «Ассорти шашлыков»</h3></div>
+            <div style="display:flex;align-items:center;gap:16px"><span class="p">1 800 ₽</span><button class="btn btn-primary btn-sm" type="button" data-add-name="Сет «Ассорти шашлыков»">В корзину <i data-ic="plus"></i></button></div>
+          </div>
+        </div>
+        <div class="grill-photos">
+          <div class="ph" data-reveal><img data-img="grillBoard" alt="Шашлык с луком на деревянной доске" loading="lazy"></div>
+          <div class="ph" data-reveal="2"><img src="https://www.edostav.ru//upload/thumb/mr/988x494/goods_1114666_6a7d672b61845.jpeg" alt="Шашлык «Пистолеты»" loading="lazy"></div>
+          <div class="ph" data-reveal="3"><img data-img="mackerel" alt="Скумбрия с мангала" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ЗАВТРАКИ 09:00–12:00 ============ -->
+    <section class="section breakfast" id="breakfast" aria-labelledby="bf-title">
+      <div class="wrap bf-grid">
+        <div>
+          <span class="eyebrow" data-reveal>Завтраки · каждый день</span>
+          <h2 id="bf-title" data-reveal="1" style="margin-top:16px">Утро <em>на&nbsp;веранде</em></h2>
+          <!-- Часы-иллюстрация: стрелки идут от 9:00 к 12:00 по мере прокрутки -->
+          <svg class="bf-clock" viewBox="0 0 200 200" role="img" aria-label="Часы: завтраки с 9 до 12" data-clock>
+            <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="2" opacity=".25"/>
+            <path d="M100 8 A 92 92 0 0 0 8 100" fill="none" stroke="#D7346F" stroke-width="6" stroke-linecap="round"/>
+            <g stroke="currentColor" stroke-width="3" stroke-linecap="round">
+              <path d="M100 18v12M100 170v12M18 100h12M170 100h12"/>
+            </g>
+            <text x="100" y="50" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="700" fill="currentColor">12</text>
+            <text x="44" y="108" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="22" font-weight="700" fill="#D7346F">9</text>
+            <line class="hand hand-h" x1="100" y1="100" x2="100" y2="58" stroke="currentColor" stroke-width="6" stroke-linecap="round" style="transform:rotate(270deg)"/>
+            <line class="hand hand-m" x1="100" y1="100" x2="100" y2="32" stroke="#D7346F" stroke-width="3.5" stroke-linecap="round"/>
+            <circle cx="100" cy="100" r="7" fill="currentColor"/>
+          </svg>
+          <div class="bf-hours" data-reveal>09:00–12:00</div>
+          <p class="lead" data-reveal="1" style="margin-top:18px">Кофе, вафли, фреши и сытные завтраки. Гости особенно хвалят кофе по-турецки, а завтраки получают 93% положительных упоминаний в отзывах.</p>
+          <a class="btn btn-dark" href="#booking" data-reveal="2" style="margin-top:12px">Забронировать стол на утро <i data-ic="arrow"></i></a>
+        </div>
+        <div class="bf-photos">
+          <div class="ph" data-reveal><img data-img="breakfast1" alt="Тосты на бирюзовой тарелке и кофе" loading="lazy"></div>
+          <div class="ph" data-reveal="2"><img data-img="breakfast2" alt="Завтрак: яичница, сосиски и картофель" loading="lazy"></div>
+          <div class="ph" data-reveal="3"><img data-img="breakfast3" alt="Омлет с овощным салатом" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-row"><span>Завтрак</span><span>Кофе</span><span>Вафли</span><span>Фреши</span><span>Завтрак</span><span>Кофе</span><span>Вафли</span><span>Фреши</span></div>
+        <div class="marquee-row"><span>Завтрак</span><span>Кофе</span><span>Вафли</span><span>Фреши</span><span>Завтрак</span><span>Кофе</span><span>Вафли</span><span>Фреши</span></div>
+      </div>
+    </section>
+
+    <!-- ============ АВТОРСКИЕ НАПИТКИ: «плавающие» стаканы с параллаксом ============ -->
+    <section class="section drinks" id="drinks" aria-labelledby="drinks-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow" data-reveal>Авторские напитки</span>
+          <h2 id="drinks-title" data-reveal="1">Лимонады, смузи <em>и&nbsp;коктейли</em></h2>
+        </div>
+        <div class="drinks-grid">
+          <a class="drink" href="menu.html#lemonades" style="--c:#F6C46E" data-reveal="0">
+            <div class="glass-wrap" data-speed="-6"><div class="glass"><img src="https://www.edostav.ru//upload/thumb/mr/988x494/goods_1028010_6a07185dcc310.jpeg" alt="Лимонад Манго-маракуйя" loading="lazy"></div></div>
+            <h3>Лимонады</h3><p>Манго-маракуйя, киви-тархун, щавелевый, мохито</p><span class="from">от 380 ₽</span>
+          </a>
+          <a class="drink" href="menu.html#shakes" style="--c:#F2C3D3" data-reveal="1">
+            <div class="glass-wrap" data-speed="8"><div class="glass"><img data-img="milkshake" alt="Молочный коктейль" loading="lazy"></div></div>
+            <h3>Молочные коктейли</h3><p>Зефирные облака, черничный лес, песочный замок</p><span class="from">от 230 ₽</span>
+          </a>
+          <a class="drink" href="menu.html#smoothies" style="--c:#C9DFAE" data-reveal="2">
+            <div class="glass-wrap" data-speed="-4"><div class="glass"><img data-img="smoothies" alt="Смузи и коктейли" loading="lazy"></div></div>
+            <h3>Смузи</h3><p>Клубника-банан, ягодный взрыв, киви-шпинат</p><span class="from">от 270 ₽</span>
+          </a>
+          <a class="drink" href="menu.html#fresh" style="--c:#BFE0DC" data-reveal="3">
+            <div class="glass-wrap" data-speed="10"><div class="glass"><img data-img="teapot" alt="Фруктовый чай в чайнике" loading="lazy"></div></div>
+            <h3>Чаи и фреши</h3><p>Гости особенно любят манговый чай. Фреши — апельсиновый, морковный</p><span class="from">фреши от 190 ₽</span>
+          </a>
+        </div>
+        <div class="drinks-note">
+          <p class="lead" style="margin:0">Коктейли — 100% положительных упоминаний в отзывах на Яндексе.</p>
+          <a class="btn btn-line" href="menu.html#lemonades">Все напитки <i data-ic="arrow"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ОТЗЫВЫ: счётчик рейтинга + бесконечная лента ============ -->
+    <section class="section reviews" id="reviews" aria-labelledby="rev-title">
+      <div class="wrap">
+        <span class="eyebrow">Отзывы гостей</span>
+        <h2 id="rev-title" class="visually-hidden">Отзывы и рейтинг</h2>
+        <div class="rating-box" style="margin-top:22px">
+          <div class="rating-num" data-count-to="5.0" data-decimals="1" aria-label="Рейтинг 5.0">5.0</div>
+          <div class="rating-meta">
+            <div class="rating-stars" aria-hidden="true"><i data-ic="star"></i><i data-ic="star"></i><i data-ic="star"></i><i data-ic="star"></i><i data-ic="star"></i></div>
+            <strong style="font-size:20px"><span data-count-to="1564">1564</span> оценки · 700+ отзывов</strong>
+            <small>на Яндекс Картах</small>
+            <span class="award"><i data-ic="award"></i>«Хорошее место 2026» от Яндекса</span>
+          </div>
+        </div>
+      </div>
+      <div class="rev-belt" data-rev-belt="0" aria-label="Цитаты из отзывов"></div>
+      <div class="rev-belt reverse" data-rev-belt="1" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ БРОНИРОВАНИЕ СТОЛА ============ -->
+    <section class="section" id="booking" aria-labelledby="booking-title">
+      <div class="wrap split-2">
+        <div>
+          <span class="eyebrow" data-reveal>Бронирование</span>
+          <h2 id="booking-title" data-reveal="1" style="margin:16px 0 20px">Забронируйте <em>стол</em></h2>
+          <p class="lead" data-reveal="2">В зале, на веранде или в уютной кабинке. Заявка придёт администратору, он перезвонит и подтвердит бронь.</p>
+          <ul class="info-list" style="margin-top:30px">
+            <li data-reveal><span class="perk-ic"><i data-ic="clock"></i></span><div><b>Зал с 09:00</b><span>завтраки 09:00–12:00</span></div></li>
+            <li data-reveal="1"><span class="perk-ic"><i data-ic="phone"></i></span><div><b><a href="tel:+79618347000" data-cfg-href="tel" data-cfg="phone" style="text-decoration:none">+7 (961) 834-70-00</a></b><span>можно забронировать по телефону</span></div></li>
+          </ul>
+        </div>
+        <form class="form form-card" data-form="booking" novalidate data-reveal="1">
+          <div class="form-row">
+            <div class="field"><label for="b-name">Имя</label><input id="b-name" name="name" autocomplete="name" data-required data-type="name"><span class="field-error"></span></div>
+            <div class="field"><label for="b-phone">Телефон</label><input id="b-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-required data-type="phone" data-mask="phone"><span class="field-error"></span></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="b-date">Дата</label><input id="b-date" name="date" type="date" data-required><span class="field-error"></span></div>
+            <div class="field"><label for="b-time">Время</label><input id="b-time" name="time" type="time" min="09:00" max="22:30" data-required><span class="field-error"></span></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="b-guests">Гостей</label><select id="b-guests" name="guests"><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7–10</option><option>Больше 10</option></select></div>
+            <div class="field"><label for="b-zone">Где сесть</label><select id="b-zone" name="zone"><option>В зале</option><option>На веранде</option><option>В кабинке</option><option>Без разницы</option></select></div>
+          </div>
+          <div class="field"><label for="b-comment">Комментарий</label><textarea id="b-comment" name="comment" placeholder="Повод, детский стульчик, пожелания"></textarea></div>
+          <!-- Согласие на обработку ПДн: чекбокс НЕ отмечен заранее -->
+          <label class="consent" for="b-consent"><input type="checkbox" id="b-consent" name="consent" data-consent><span>Я даю <a href="consent.html" target="_blank">согласие на обработку персональных данных</a> и принимаю условия <a href="privacy.html" target="_blank">Политики конфиденциальности</a></span></label>
+          <button class="btn btn-primary" type="submit" disabled>Забронировать <i data-ic="arrow"></i></button>
+          <div class="form-success" role="status"></div>
+        </form>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true" data-branch="18"></div>
+
+    <!-- ============ БАНКЕТЫ И МЕРОПРИЯТИЯ ============ -->
+    <section class="section" id="banquet" aria-labelledby="banquet-title" style="padding-top:60px">
+      <div class="wrap banquet-grid">
+        <div class="banquet-media">
+          <div class="ph" data-reveal><img data-img="verandaEve" alt="Веранда кафе вечером: драпировки и мягкие кресла" loading="lazy"></div>
+          <div class="ph small" data-reveal="2"><img data-img="hallGreen" alt="Зал с плетёными лампами" loading="lazy"></div>
+        </div>
+        <div>
+          <span class="eyebrow" data-reveal>Банкеты и мероприятия</span>
+          <h2 id="banquet-title" data-reveal="1" style="margin:16px 0 20px">Праздник <em>под ключ</em></h2>
+          <p class="lead" data-reveal="2">Дни рождения, семейные вечера, встречи с друзьями. Зал, кабинки и летняя веранда — подберём пространство под ваше количество гостей.</p>
+          <ul class="adv-list">
+            <li data-reveal><i data-ic="check"></i><span>Халяль-кухня: мангал, горячие блюда, салаты, десерты</span></li>
+            <li data-reveal="1"><i data-ic="check"></i><span>Детский уголок — взрослые отдыхают спокойно</span></li>
+            <li data-reveal="2"><i data-ic="check"></i><span>Молельная комната, Wi-Fi и парковка</span></li>
+            <li data-reveal="3"><i data-ic="check"></i><span>Оплата картой, наличными или онлайн</span></li>
+          </ul>
+          <form class="form form-card" data-form="banquet" novalidate style="margin-top:30px" data-reveal>
+            <div class="form-row">
+              <div class="field"><label for="bq-name">Имя</label><input id="bq-name" name="name" autocomplete="name" data-required data-type="name"><span class="field-error"></span></div>
+              <div class="field"><label for="bq-phone">Телефон</label><input id="bq-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" data-required data-type="phone" data-mask="phone"><span class="field-error"></span></div>
+            </div>
+            <div class="form-row">
+              <div class="field"><label for="bq-date">Дата</label><input id="bq-date" name="date" type="date" data-required><span class="field-error"></span></div>
+              <div class="field"><label for="bq-guests">Гостей</label><input id="bq-guests" name="guests" type="number" min="5" max="200" inputmode="numeric" placeholder="Например, 25" data-required><span class="field-error"></span></div>
+            </div>
+            <div class="field"><label for="bq-format">Формат</label><select id="bq-format" name="format"><option>День рождения</option><option>Семейный праздник</option><option>Встреча с друзьями</option><option>Корпоратив</option><option>Другое</option></select></div>
+            <label class="consent" for="bq-consent"><input type="checkbox" id="bq-consent" name="consent" data-consent><span>Я даю <a href="consent.html" target="_blank">согласие на обработку персональных данных</a> и принимаю условия <a href="privacy.html" target="_blank">Политики конфиденциальности</a></span></label>
+            <button class="btn btn-primary" type="submit" disabled>Отправить заявку <i data-ic="arrow"></i></button>
+            <div class="form-success" role="status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ КАК НАС НАЙТИ ============ -->
+    <section class="section location" id="location" aria-labelledby="loc-title">
+      <div class="wrap loc-grid">
+        <div class="loc-info">
+          <span class="eyebrow">Как нас найти</span>
+          <h2 id="loc-title" style="margin-top:16px">Ждём <em>в&nbsp;гости</em></h2>
+          <dl>
+            <div><dt>Адрес</dt><dd data-cfg="address"></dd></div>
+            <div><dt>Часы</dt><dd>Зал 09:00–23:00 · завтраки 09:00–12:00<br>Доставка 10:00–22:00</dd></div>
+            <div><dt>Телефон</dt><dd><a href="tel:+79618347000" data-cfg-href="tel" data-cfg="phone" style="text-decoration:none"></a></dd></div>
+            <div><dt>Средний чек</dt><dd data-cfg="avgCheck"></dd></div>
+          </dl>
+          <div class="loc-actions">
+            <a class="btn btn-primary" href="tel:+79618347000" data-cfg-href="tel"><i data-ic="phone"></i> Позвонить</a>
+            <a class="btn btn-glass" href="#" data-cfg-href="wa" target="_blank" rel="noopener"><i data-ic="wa"></i> WhatsApp</a>
+            <a class="btn btn-glass" href="#" data-cfg-href="route" target="_blank" rel="noopener"><i data-ic="route"></i> Маршрут</a>
+          </div>
+        </div>
+        <!-- Карта Яндекса грузится только после согласия на cookie «Карты» -->
+        <div class="map-box" data-map>
+          <div class="map-consent">
+            <i data-ic="pin"></i>
+            <p>Карта Яндекса загружается только с вашего согласия: сервис карт использует собственные cookie.</p>
+            <button class="btn btn-primary btn-sm" type="button" data-map-consent>Показать карту</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/menu-data.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>

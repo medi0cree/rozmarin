@@ -1,0 +1,195 @@
+<!doctype html>
+<!-- =============================================================================
+     about.html — О КАФЕ: история и факты, что ценят гости, удобства,
+     летняя веранда, банкеты, галерея фото с просмотром на весь экран.
+     ============================================================================= -->
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>О кафе «Розмарин» — веранда, банкеты, детский уголок · Избербаш</title>
+  <meta name="description" content="Кафе «Розмарин» в Избербаше: халяль-кухня, летняя веранда, детский уголок, мягкие диваны и кабинки, банкеты, молельная комната, Wi-Fi и парковка. 5.0 на Яндекс Картах.">
+  <meta name="theme-color" content="#15302A">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="О кафе «Розмарин»">
+  <meta property="og:image" content="https://avatars.mds.yandex.net/get-altay/5480011/2a0000017e58de6d916d8a50b6d9d4f684e3/XXXL">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Полосы «что хвалят гости»: ширина задаётся через --v (в процентах) */
+    .praise { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 40px; margin-top: 40px; }
+    .praise div { display: grid; gap: 8px; }
+    .praise b { display: flex; justify-content: space-between; font-size: 15px; }
+    .praise b span { font-family: var(--font-display); font-size: 24px; color: var(--rose); line-height: 1; }
+    .praise i { height: 6px; border-radius: 6px; background: var(--line); overflow: hidden; display: block; position: relative; }
+    .praise i::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--rosemary-600), var(--rose)); transform-origin: left; transform: scaleX(calc(var(--v) / 100)); transition: transform 1.4s var(--ease); }
+    .js-anim .praise:not(.is-in) i::after { transform: scaleX(0); }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 36px; }
+    .stats div { padding: 20px; border-radius: var(--radius-sm); background: var(--card); }
+    .stats b { display: block; font-family: var(--font-display); font-size: 42px; line-height: 1; color: var(--rosemary-900); }
+    @media (prefers-color-scheme: dark) { .stats b { color: var(--cream-50); } }
+    .stats span { font-size: 13.5px; color: var(--muted); }
+    .veranda-photos { display: grid; grid-template-columns: 1.2fr 1fr; grid-template-rows: auto auto; gap: 16px; }
+    .veranda-photos .ph:first-child { grid-row: span 2; }
+    .veranda-photos .ph { aspect-ratio: 4 / 5; }
+    .veranda-photos .ph:not(:first-child) { aspect-ratio: 4 / 3; }
+    .cta-band { border-radius: var(--radius); background: var(--plum); color: #FBEFF4; padding: clamp(28px, 5vw, 60px); display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+    .cta-band h2 { font-size: clamp(36px, 5vw, 60px); }
+    @media (max-width: 900px) { .praise { grid-template-columns: 1fr 1fr; } .stats { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .praise { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body data-page="about" class="page-inner">
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">О кафе</span>
+        <h1 style="margin:18px 0 18px">Веточка розмарина <em>и&nbsp;восточное гостеприимство</em></h1>
+      </div>
+    </section>
+
+    <!-- Знакомство и цифры -->
+    <section class="section" style="padding-top:20px">
+      <div class="wrap about-intro">
+        <div>
+          <p class="lead" data-reveal style="color:var(--text);font-size:clamp(19px,1.8vw,24px)">«Розмарин» — кафе европейской и восточной кухни в Избербаше. Мангал, японская кухня, пицца и паста, авторские напитки и десерты. Вся кухня — халяль.</p>
+          <p class="lead" data-reveal="1">Зал с живой зеленью и плетёными лампами, мягкие диваны и кабинки, летняя веранда с беседками. Утром — завтраки, днём — обеды для всей семьи, вечером — ужин под негромкую музыку.</p>
+          <div class="stats">
+            <div data-reveal><b>5.0</b><span>рейтинг на Яндекс Картах</span></div>
+            <div data-reveal="1"><b>1564</b><span>оценки гостей</span></div>
+            <div data-reveal="2"><b>700+</b><span>отзывов</span></div>
+            <div data-reveal="3"><b data-cfg="avgCheck" style="font-size:30px"></b><span>средний чек</span></div>
+          </div>
+          <p class="form-note" style="margin-top:18px">Награда «Хорошее место 2026» от Яндекса.</p>
+        </div>
+        <div class="ph" data-reveal="1"><img data-img="facade" alt="Фасад кафе «Розмарин» с вывеской и зелёной маркизой" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- Что хвалят гости (по данным отзывов на Яндекс Картах) -->
+    <section class="section" style="background:var(--surface)">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Что хвалят гости</span>
+          <h2>Доля положительных <em>упоминаний</em></h2>
+          <p class="lead">По анализу отзывов на Яндекс Картах.</p>
+        </div>
+        <div class="praise" data-praise>
+          <div><b>Красивая подача <span>100%</span></b><i style="--v:100"></i></div>
+          <div><b>Коктейли <span>100%</span></b><i style="--v:100"></i></div>
+          <div><b>Атмосфера <span>97%</span></b><i style="--v:97"></i></div>
+          <div><b>Интерьер <span>95%</span></b><i style="--v:95"></i></div>
+          <div><b>Завтраки <span>93%</span></b><i style="--v:93"></i></div>
+          <div><b>Веранда <span>89%</span></b><i style="--v:89"></i></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Удобства -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Удобства</span>
+          <h2>Всё, чтобы <em>остаться подольше</em></h2>
+        </div>
+        <div class="features">
+          <div class="feature" data-reveal><span class="perk-ic halal">حلال</span><h3>Халяль</h3><p>Вся кухня готовится по правилам халяль.</p></div>
+          <div class="feature" data-reveal="1"><span class="perk-ic"><i data-ic="sun"></i></span><h3>Летняя веранда</h3><p>Беседки, столики под навесом, цветы и зелень.</p></div>
+          <div class="feature" data-reveal="2"><span class="perk-ic"><i data-ic="kids"></i></span><h3>Детский уголок</h3><p>Детям есть где поиграть, пока взрослые отдыхают.</p></div>
+          <div class="feature" data-reveal="3"><span class="perk-ic"><i data-ic="sofa"></i></span><h3>Диваны и кабинки</h3><p>Мягкие диваны и уединённые кабинки для компании.</p></div>
+          <div class="feature" data-reveal><span class="perk-ic"><i data-ic="party"></i></span><h3>Банкеты</h3><p>Дни рождения, семейные праздники, встречи.</p></div>
+          <div class="feature" data-reveal="1"><span class="perk-ic"><i data-ic="truck"></i></span><h3>Доставка и самовывоз</h3><p>Доставка 10:00–22:00, кофе с собой.</p></div>
+          <div class="feature" data-reveal="2"><span class="perk-ic"><i data-ic="moon"></i></span><h3>Молельная комната</h3><p>Отдельное спокойное помещение для намаза.</p></div>
+          <div class="feature" data-reveal="3"><span class="perk-ic"><i data-ic="card"></i></span><h3>Wi-Fi, парковка, оплата</h3><p>Картой, наличными или онлайн.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Веранда -->
+    <section class="section" style="background:var(--surface)">
+      <div class="wrap split-2" style="align-items:center">
+        <div class="veranda-photos">
+          <div class="ph" data-reveal><img data-img="veranda" alt="Летняя веранда с навесом" loading="lazy"></div>
+          <div class="ph" data-reveal="1"><img data-img="lights" alt="Гирлянды над верандой вечером" loading="lazy"></div>
+          <div class="ph" data-reveal="2"><img data-img="courtyard" alt="Ступени и столик во дворе кафе" loading="lazy"></div>
+        </div>
+        <div>
+          <span class="eyebrow" data-reveal>Летняя веранда</span>
+          <h2 data-reveal="1" style="margin:16px 0 20px">Завтраки <em>на&nbsp;свежем воздухе</em></h2>
+          <p class="lead" data-reveal="2">Столики под навесом и беседки, вокруг — цветы и зелень, рядом парк. На веранде детям есть где побегать, а вечером зажигаются гирлянды.</p>
+          <a class="btn btn-dark" href="index.html#booking" data-reveal="3" style="margin-top:14px">Забронировать на веранде <i data-ic="arrow"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Банкеты -->
+    <section class="section">
+      <div class="wrap">
+        <div class="cta-band" data-reveal>
+          <div><span class="eyebrow" style="color:#F6B8CE">Банкеты и мероприятия</span><h2 style="margin-top:14px">Отметим <em>вместе</em></h2><p style="margin:12px 0 0;opacity:.85;max-width:46ch">Зал, кабинки и веранда — подберём пространство и меню под ваш праздник.</p></div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="index.html#banquet">Оставить заявку <i data-ic="arrow"></i></a><a class="btn btn-glass" href="tel:+79618347000" data-cfg-href="tel"><i data-ic="phone"></i> Позвонить</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Галерея -->
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Галерея</span>
+          <h2>Как у нас <em>красиво</em></h2>
+        </div>
+        <div class="gallery" data-gallery></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Просмотр фото на весь экран -->
+  <div class="modal lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фото">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-panel"><button class="icon-btn modal-close" type="button" data-modal-close aria-label="Закрыть"><i data-ic="x"></i></button><img alt="" data-lightbox-img></div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/menu-data.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script>
+    /* Галерея: список фото берётся из SITE.images (config.js).
+       Чтобы добавить фото — допишите ключ в массив ниже. */
+    (function () {
+      var R = window.ROZ, img = window.SITE.images;
+      var items = [
+        ["hallGreen", "Зал с плетёными лампами"], ["verandaEve", "Веранда вечером"], ["plateLogo", "Десерт на тарелке с надписью Rosemarin"],
+        ["hallColor", "Цветные стулья в зале"], ["smoothies", "Смузи и молочные коктейли"], ["entrance", "Вход во двор кафе"],
+        ["breakfast1", "Тосты на завтрак"], ["turquoise", "Бирюзовый зал"], ["fondant", "Шоколадный фондан"],
+        ["lounge", "Мягкие диваны"], ["coffee", "Капучино и десерт"], ["steakSalad", "Мясо с салатом"],
+        ["mojito", "Мохито"], ["interior", "Общий вид зала"], ["berry", "Ягодный напиток"], ["lambRibs", "Каре ягнёнка"]
+      ];
+      var g = document.querySelector("[data-gallery]");
+      g.innerHTML = items.map(function (it) {
+        return '<button type="button" data-full="' + img[it[0]] + '" aria-label="Открыть фото: ' + it[1] + '"><div class="ph"><img src="' + img[it[0]].replace("XXXL", "XXL_height") + '" alt="' + it[1] + '" loading="lazy" style="min-height:120px"></div></button>';
+      }).join("");
+      R.guardImages(g);
+      var lb = document.getElementById("lightbox"), big = lb.querySelector("[data-lightbox-img]");
+      g.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-full]");
+        if (!b) return;
+        big.src = b.getAttribute("data-full").replace("XXL_height", "XXXL");
+        big.alt = b.querySelector("img").alt;
+        R.openModal(lb);
+      });
+      /* Полосы «что хвалят гости» заполняются, когда блок появляется на экране */
+      var pr = document.querySelector("[data-praise]");
+      if ("IntersectionObserver" in window) {
+        var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { pr.classList.add("is-in"); io.disconnect(); } }, { threshold: 0.3 });
+        io.observe(pr);
+      } else pr.classList.add("is-in");
+    })();
+  </script>
+</body>
+</html>

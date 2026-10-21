@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- =============================================================================
+     menu.html — ПОЛНОЕ МЕНЮ И ЗАКАЗ
+     Липкая панель категорий с подсветкой активной, поиск, фильтры
+     («Хит», «Мангал», «Без мяса»), модалка блюда и корзина.
+     Блюда и цены редактируются в assets/js/menu-data.js, вёрстка — в assets/js/menu.js.
+     ============================================================================= -->
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Меню и доставка — кафе «Розмарин», Избербаш</title>
+  <meta name="description" content="Меню кафе «Розмарин»: блюда на мангале, стейки, пицца, паста, роллы, супы, салаты, десерты, лимонады и молочные коктейли. Доставка 10:00–22:00 и самовывоз в Избербаше.">
+  <meta name="theme-color" content="#15302A">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Меню кафе «Розмарин»">
+  <meta property="og:description" content="Мангал, пицца, паста, роллы и авторские напитки. Доставка по Избербашу.">
+  <meta property="og:image" content="https://www.edostav.ru//upload/thumb/mr/988x494/goods_1114659_6a7d66c491be5.jpeg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="menu" class="page-inner">
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow">Меню и доставка · <span data-open-badge class="open-badge" style="border:0;padding:0"><i></i><span>…</span></span></span>
+        <h1 style="margin:18px 0 18px">Меню <em>«Розмарина»</em></h1>
+        <p class="lead">Доставка с 10:00 до 22:00 и самовывоз с улицы Гамидова, 22А. Добавляйте блюда в корзину — заказ уйдёт администратору в WhatsApp.</p>
+        <div class="menu-tools">
+          <label class="search"><span class="visually-hidden">Поиск по меню</span><i data-ic="search"></i><input type="search" placeholder="Найти блюдо: том ям, фондан, пепперони…" data-menu-search autocomplete="off"></label>
+          <button class="chip" type="button" aria-pressed="false" data-filter="hit">Хит</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="grill"><i data-ic="flame"></i>Мангал</button>
+          <button class="chip" type="button" aria-pressed="false" data-filter="veg"><i data-ic="leaf"></i>Без мяса</button>
+        </div>
+      </div>
+    </section>
+
+    <nav class="cat-nav" aria-label="Категории меню"><div class="wrap"><ul data-cat-nav></ul></div></nav>
+
+    <div class="wrap" data-menu aria-live="polite"></div>
+    <div class="wrap"><p class="form-note" style="padding:40px 0 80px">Цены указаны в рублях. Состав, вес и наличие уточняйте у администратора: <a href="tel:+79618347000" data-cfg-href="tel" data-cfg="phone"></a>.</p></div>
+  </main>
+
+  <!-- Модалка блюда -->
+  <div class="modal" id="dish-modal" role="dialog" aria-modal="true" aria-labelledby="dm-title">
+    <div class="modal-backdrop" data-modal-close></div>
+    <div class="modal-panel"><button class="icon-btn modal-close" type="button" data-modal-close aria-label="Закрыть"><i data-ic="x"></i></button><div data-dish-modal></div></div>
+  </div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/menu-data.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/menu.js"></script>
+</body>
+</html>

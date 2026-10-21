@@ -1,0 +1,4 @@
+# robots.txt — правила для поисковых роботов. Замените {{DOMAIN}} на адрес сайта.
+User-agent: *
+Allow: /
+Sitemap: https://{{DOMAIN}}/sitemap.xml
